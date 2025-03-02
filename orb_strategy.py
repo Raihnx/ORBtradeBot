@@ -2,7 +2,7 @@ import MetaTrader5 as mt5
 import pandas as pd
 from datetime import datetime, timedelta
 
-SYMBOL = "EURUSD"  # Change this to your trading pair
+SYMBOL = "BTCUSD"  # Change this to your trading pair
 
 def get_orb_range():
     """Fetches market data and calculates the ORB15 range"""
@@ -13,7 +13,7 @@ def get_orb_range():
         return None, None
 
     now = datetime.utcnow()  # MT5 uses UTC time
-    start_time = now.replace(hour=20, minute=0, second=0, microsecond=0)  # Midnight UTC
+    start_time = now.replace(hour=0, minute=0, second=0, microsecond=0)  # Midnight UTC
     open_time = start_time + timedelta(minutes=15)  # First 15 minutes
 
     # Fetch historical data
